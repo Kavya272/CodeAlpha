@@ -1,0 +1,81 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #f06, #4a90e2);
+    color: #ffffff;
+}
+
+/* Container for the gallery */
+.gallery-container {
+    text-align: center;
+    padding: 20px;
+}
+
+.gallery-container h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.4);
+}
+
+/* Grid layout for the images */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Styling individual images */
+.gallery-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect for images */
+.gallery-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+
+/* Add a subtle overlay on hover */
+.gallery-grid img::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gallery-grid img:hover::after {
+    opacity: 1;
+}
+
+/* Responsive design adjustments */
+@media (max-width: 768px) {
+    .gallery-container h1 {
+        font-size: 2.5em;
+    }
+    
+    .gallery-grid {
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container h1 {
+        font-size: 2em;
+    }
+}
